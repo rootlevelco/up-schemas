@@ -1,7 +1,7 @@
 # Schema packages up publishes. `up schemas build` generates them into
 # packages/, and `up schemas publish` pushes each one as
 # <registry>/<name>:<version>.
-registry = "ghcr.io/patrycju/up-schemas"
+registry = "ghcr.io/rootlevelco/up-schemas"
 
 [[tofu]]
 provider = "hashicorp/aws"

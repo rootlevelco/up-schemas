@@ -1,6 +1,6 @@
 # up-schemas
 
-Curated KCL schema packages for [up](https://github.com/rootlevelco/up): typed resources for OpenTofu providers and Kubernetes kinds. Each package is published to `ghcr.io/patrycju/up-schemas/<name>:<version>`.
+Curated KCL schema packages for [up](https://github.com/rootlevelco/up): typed resources for OpenTofu providers and Kubernetes kinds. Each package is published to `ghcr.io/rootlevelco/up-schemas/<name>:<version>`.
 
 | Package | Versions | Source |
 |---|---|---|
@@ -13,7 +13,7 @@ Pin it in your project's `kcl.mod`:
 
 ```toml
 [dependencies]
-aws = { oci = "oci://ghcr.io/patrycju/up-schemas/aws", tag = "6.66.0" }
+aws = { oci = "oci://ghcr.io/rootlevelco/up-schemas/aws", tag = "6.66.0" }
 ```
 
 up pulls it into `.up/cache/kcl/oci` on the first run. The packages are private for now, so set `UP_REGISTRY_TOKEN` (or `GITHUB_TOKEN`) to a token with `read:packages`.
