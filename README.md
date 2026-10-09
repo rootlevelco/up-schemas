@@ -1,6 +1,6 @@
 # up-schemas
 
-Curated KCL schema packages for [up](https://github.com/patrycju/up): typed resources for OpenTofu providers and Kubernetes kinds. Each package is published to `ghcr.io/patrycju/up-schemas/<name>:<version>`.
+Curated KCL schema packages for [up](https://github.com/rootlevelco/up): typed resources for OpenTofu providers and Kubernetes kinds. Each package is published to `ghcr.io/patrycju/up-schemas/<name>:<version>`.
 
 | Package | Versions | Source |
 |---|---|---|
