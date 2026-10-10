@@ -16,6 +16,10 @@ provider = "hashicorp/google"
 versions = ["8.6.0"]
 
 [[tofu]]
+provider = "hashicorp/helm"
+versions = ["3.3.0"]
+
+[[tofu]]
 provider = "hetznercloud/hcloud"
 versions = ["1.69.0", "1.70.0"]
 

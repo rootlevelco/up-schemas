@@ -8,6 +8,7 @@ Curated KCL schema packages for [up](https://github.com/rootlevelco/up): typed r
 | `azurerm` | 5.9.0 | `hashicorp/azurerm` |
 | `google` | 8.6.0 | `hashicorp/google` |
 | `hcloud` | 1.69.0, 1.70.0 | `hetznercloud/hcloud` |
+| `helm` | 3.3.0 | `hashicorp/helm` |
 | `k8s` | 1.37.1 (every kind up serves) | Kubernetes OpenAPI spec |
 
 ## Using a package
@@ -61,7 +62,25 @@ app = k8s.Deployment {
 }
 ```
 
-`k8s` has every built-in kind with a stable API version. Kinds only in alpha or beta APIs, and custom resources, use `KubernetesManifest`.
+`k8s` has every built-in kind with a stable API version. Kinds only in alpha or beta APIs use `KubernetesManifest`. Custom resources get schemas from their CRDs with `up gen crds`.
+
+Helm charts go through `hashicorp/helm`:
+
+```python
+import helm
+import yaml
+
+charts = helm.Provider { config.kubernetes = {config_context = "dev"} }
+pg = helm.Release {
+    tf_name = "cnpg"
+    repository = "https://cloudnative-pg.github.io/charts"
+    chart = "cloudnative-pg"
+    version = "0.28.2"
+    namespace = "cnpg-system"
+    create_namespace = True
+    values = [yaml.encode({monitoring.podMonitorEnabled = False})]
+}
+```
 
 ## Adding or updating a package
 
