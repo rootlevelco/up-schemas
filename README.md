@@ -38,7 +38,8 @@ arn = Output(logs.arn)
 import hcloud
 import k8s
 
-cloud = hcloud.Provider { config = {token = up.sensitive(token)} }
+token = Secret { env = "HCLOUD_TOKEN" }
+cloud = hcloud.Provider { config = {token = token.value} }
 net = hcloud.Network { tf_name = "apps", ip_range = "10.0.0.0/16" }
 web = hcloud.Server {
     tf_name = "web"
