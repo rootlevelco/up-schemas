@@ -7,6 +7,18 @@ registry = "ghcr.io/rootlevelco/up-schemas"
 provider = "hashicorp/aws"
 versions = ["6.66.0"]
 
+[[tofu]]
+provider = "hashicorp/azurerm"
+versions = ["5.9.0"]
+
+[[tofu]]
+provider = "hashicorp/google"
+versions = ["8.6.0"]
+
+[[tofu]]
+provider = "hetznercloud/hcloud"
+versions = ["1.69.0", "1.70.0"]
+
+# Every kind up serves, since kinds is left out.
 [[kubernetes]]
 versions = ["1.37.1"]
-kinds = ["Pod"]
